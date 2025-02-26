@@ -7,14 +7,14 @@ PROJECT_NAME=${1:-my-symbol-project}
 mkdir -p $PROJECT_NAME
 
 # デフォルトプロジェクトからファイルをコピー
-cp defualt-project/.gitignore $PROJECT_NAME/
-cp defualt-project/account.ts $PROJECT_NAME/
-cp defualt-project/package.json $PROJECT_NAME/
-cp defualt-project/README.md $PROJECT_NAME/
-cp defualt-project/tsconfig.json $PROJECT_NAME/
+cp default-project/.gitignore $PROJECT_NAME/
+cp default-project/account.ts $PROJECT_NAME/
+cp default-project/package.json $PROJECT_NAME/
+cp default-project/README.md $PROJECT_NAME/
+cp default-project/tsconfig.json $PROJECT_NAME/
 
 # package.jsonのプロジェクト名を更新（macOS用のsed構文）
-sed -i '' "s/defualt-project/$PROJECT_NAME/g" $PROJECT_NAME/package.json
+sed -i '' "s/default-project/$PROJECT_NAME/g" $PROJECT_NAME/package.json
 
 # 新しいプロジェクトディレクトリに移動して依存関係をインストール
 cd $PROJECT_NAME

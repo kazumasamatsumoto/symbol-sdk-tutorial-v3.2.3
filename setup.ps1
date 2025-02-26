@@ -5,14 +5,14 @@ param([string]$ProjectName = "my-symbol-project")
 New-Item -ItemType Directory -Force -Path $ProjectName | Out-Null
 
 # デフォルトプロジェクトからファイルをコピー
-Copy-Item "defualt-project\.gitignore" -Destination "$ProjectName\"
-Copy-Item "defualt-project\account.ts" -Destination "$ProjectName\"
-Copy-Item "defualt-project\package.json" -Destination "$ProjectName\"
-Copy-Item "defualt-project\README.md" -Destination "$ProjectName\"
-Copy-Item "defualt-project\tsconfig.json" -Destination "$ProjectName\"
+Copy-Item "default-project\.gitignore" -Destination "$ProjectName\"
+Copy-Item "default-project\account.ts" -Destination "$ProjectName\"
+Copy-Item "default-project\package.json" -Destination "$ProjectName\"
+Copy-Item "default-project\README.md" -Destination "$ProjectName\"
+Copy-Item "default-project\tsconfig.json" -Destination "$ProjectName\"
 
 # package.jsonのプロジェクト名を更新
-(Get-Content "$ProjectName\package.json") -replace "defualt-project", $ProjectName | Set-Content "$ProjectName\package.json"
+(Get-Content "$ProjectName\package.json") -replace "default-project", $ProjectName | Set-Content "$ProjectName\package.json"
 
 # 新しいプロジェクトディレクトリに移動して依存関係をインストール
 Set-Location -Path $ProjectName
